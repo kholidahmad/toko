@@ -6,20 +6,21 @@ class Welcome extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('produk_model');
 		$this->load->library('cart');
+		$this->load->model('produk_model');
 	}
 	
 	public function index()
 	{
 		$data['produk'] = $this->produk_model->daftar_produk();
-		$this->load->view('welcome_message',$data);
+		// $this->load->view('welcome_message',$data);
+		$this->load->view('home',$data);
 	}
 	
 	function kategori($kategori)
 	{
 		$data['produk'] = $this->produk_model->select_kategori($kategori);
-		$this->load->view('welcome_message',$data);
+		$this->load->view('home',$data);
 	}
 	
 	function add_to_cart($id)
@@ -122,6 +123,6 @@ class Welcome extends CI_Controller {
 		$str = $this->input->post('str',true);
 		
 		$data['produk'] = $this->produk_model->cariproduk($kategori,$str);
-		$this->load->view('welcome_message',$data);
+		$this->load->view('home',$data);
 	}
 }

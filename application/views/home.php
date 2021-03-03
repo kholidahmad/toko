@@ -30,13 +30,33 @@
         </ul>
       </div>
       <div class="col-xl-8 col-sm-12">
-				<div class="row">
-				<div class="alert alert-success" role="alert">
-					<h2>Kode Pesanan anda adalah : <?php echo $invoice_id;?></h2>
-					Simpan kode tersebut karena akan digunakan ketika melakukan konfirmasi pembayaran!! Terima kasih telah berbelanja di Toko Kami. <br>
-					<a href="<?php echo site_url('welcome/konfirmasi');?>" class="btn btn-light m-3">Konfirmasi Pembayaran</a>
-				</div>
-				</div>
+      <div class="row">
+        <?php foreach($produk as $produk): ?>
+        <div class="col-sm-6">
+          <div class="card pt-3 pb-2 mb-3" style="text-align:center">
+            <a  href="<?php echo site_url('welcome/detailproduk/'.$produk->id);?>" >
+								<?php 
+									$product_image = ['src'=>'uploads/' . $produk->gambar,
+										'width'=>'160',
+										'height'=>'160'];
+									echo img($product_image);
+								?>
+							</a>
+							</p>
+							<div class="caption mt-3">
+								<h4><?php echo $produk->brand;?> <?php echo $produk->model;?></h4>
+                <h5>Rp. <?php echo number_format($produk->harga,0,',','.');?></h5>
+							
+								<div class="mt-3 mb-3">
+									<a class="btn" href="<?php echo site_url('welcome/detailproduk/'.$produk->id);?>"> <i class="fas fa-eye"></i></a> 
+									<a class="btn btn-success" href="<?php echo site_url('welcome/add_to_cart/'.$produk->id);?>">Add to cart<i class="fas fa-cart-plus text-white ml-2"></i></a>
+								</div>
+							</div>
+          </div>
+        </div>
+        <?php endforeach;?>
+      </div>
+        
       </div>
     </div>
   </div>

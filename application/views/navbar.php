@@ -1,54 +1,35 @@
-<div id="logoArea" class="navbar">
-	<a id="smallScreen" data-target="#topMenu" data-toggle="collapse" class="btn btn-navbar">
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-		<span class="icon-bar"></span>
-	</a>
-  <div class="navbar-inner">
-    <a class="brand" href="<?php echo base_url();?>"><img src="<?php echo base_url('assets/bootshop/themes/images/logo.png');?>" alt="Bootsshop"/></a>
-		<form class="form-inline navbar-search" method="post" action="<?php echo site_url('welcome/cariproduk');?>" >
-		<?php
-			$this->load->model('produk_model');
-			$datakat = $this->produk_model->daftar_kategori();
-			// var_dump($datakat);die;
-		?>
-		<input id="srchFld" class="srchTxt" name="str" type="text" />
-		  <select class="srchTxt" name="kategori">
-				<?php foreach ($datakat as $datakat): ?>
-					<option><?=$datakat->nama_kategori?></option>
-			<?php endforeach;?>
-		</select> 
-		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
+<nav class="navbar navbar-expand-lg navbar-light" style="-webkit-box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.09); 
+box-shadow: 0px 3px 3px -1px rgba(0,0,0,0.09);">
+    <a class="navbar-brand p-3 ml-3" href="#"><span style="font-weight:800;font-size: 1.5rem;color:green"> <i class="fab fa-shopify"></i> SyopAja</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <form class="form-inline" method="post" action="<?php echo site_url('welcome/cariproduk');?>">
+      <input  id="srchFld" class="form-control mr-sm-2"  name="str" type="search" placeholder="cari" aria-label="cari">
+      <?php
+        $this->load->model('produk_model');
+        $datakat = $this->produk_model->daftar_kategori();
+      ?>
+		  <select class="form-control" name="kategori">
+          <?php foreach ($datakat as $datakat): ?>
+            <option><?=$datakat->nama_kategori?></option>
+          <?php endforeach;?>
+      </select> 
+      <button class="btn btn-outline-light my-2 my-sm-0 ml-2" type="submit" id="submitButton"><i class="fas fa-search text-success"></i></button>
     </form>
-    <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="<?php echo site_url('welcome/konfirmasi');?>">Konfirmasi Pembayaran</a></li>
-	 <li class=""><a href="contact.html">Contact</a></li>
-	 <li class="">
-	 <a href="<?php echo site_url('login');?>"><span class="btn btn-large btn-success">Login</span></a>
-	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3>Login Block</h3>
-		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="Email">
-			  </div>
-			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="Password">
-			  </div>
-			  <div class="control-group">
-				<label class="checkbox">
-				<input type="checkbox"> Remember me
-				</label>
-			  </div>
-			</form>		
-			<button type="submit" class="btn btn-success">Sign in</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-		  </div>
-		</div>
-		</li>
-    </ul>
-  </div>
-</div>
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a href="<?php echo site_url('welcome/cart');?>">
+            <h5><span class="badge badge-success mr-2">( <?php echo $this->cart->total_items();?> ) <i class="fas fa-shopping-cart mr-3"></i></span> </h5>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo site_url('welcome/konfirmasi');?>" class="btn btn-light mr-2 ml-2">Konfirmasi Pembayaran</a>
+        </li>
+        <li class="nav-item">
+          <a href="<?php echo site_url('login');?>"><span class="btn btn-large btn-outline-success">Login</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>

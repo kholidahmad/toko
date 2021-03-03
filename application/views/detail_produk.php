@@ -1,142 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <?php $this->load->view('header');?>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="<?php echo base_url('assets/vendor/bootstrap-4.5.3-dist/css/bootstrap.min.css');?>" rel="stylesheet"/>
+  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/bootstrap-4.5.3-dist/css/bootstrap.min.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/fontawesome-free/css/all.min.css');?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/custom.css');?>">
+  <title>SyopAja</title>
+</head>
 <body>
-<div id="header">
-<div class="container">
-<div id="welcomeLine" class="row">
-	<div class="span6">Welcome!<strong> User</strong></div>
-	<div class="span6">
-	<div class="pull-right">
-		
-		<a href="<?php echo site_url('welcome/cart');?>"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ <?php echo $this->cart->total_items();?> ] Itemes in your cart </span> </a> 
-	</div>
-	</div>
-</div>
-<!-- Navbar ================================================== -->
-<?php $this->load->view('navbar');?>
-</div>
-</div>
-<!-- Header End====================================================================== -->
-
-<div id="mainBody">
-	<div class="container">
-	<div class="row">
-<!-- Sidebar ================================================== -->
-	<?php $this->load->view('sidebar');?>
-<!-- Sidebar end=============================================== -->
-<div class="span9">
-    <ul class="breadcrumb">
-    <li><a href="index.html">Home</a> <span class="divider">/</span></li>
-    <li><a href="products.html">Products</a> <span class="divider">/</span></li>
-    <li class="active">product Details</li>
-    </ul>	
-	<div class="row">	  
-			<div id="gallery" class="span3">
-            <a href="<?php echo base_url('uploads/'.$produk->gambar);?>" title="<?php echo $produk->brand;?> <?php echo $produk->model;?>">
-				<img src="<?php echo base_url('uploads/'.$produk->gambar);?>" style="width:100%" alt="<?php echo $produk->brand;?> <?php echo $produk->model;?>"/>
+  <!-- navbar -->
+	<?php $this->load->view('navbar');?>
+  <!-- end navbar -->
+  <div class="container m-5">
+    <div class="row">
+      <div class="col-xl-4 col-sm-12">
+        <!-- Sidebar ================================================== -->
+          <?php $this->load->view('sidebar');?>
+        <!-- Sidebar end=============================================== -->
+        <hr>
+        <ul>
+          <div style="border: 1px solid rgb(245, 245, 245);padding:10px;border-radius:10px;">
+            <a id="myCart" href="<?php echo site_url('welcome/cart');?>" class="text-dark">
+              <i class="fas fa-shopping-cart text-success mr-2"></i><?php echo $this->cart->total_items();?> Items in your cart  
             </a>
-			  
-			 <div class="btn-toolbar">
-			  <div class="btn-group">
-				<span class="btn"><i class="icon-envelope"></i></span>
-				<span class="btn" ><i class="icon-print"></i></span>
-				<span class="btn" ><i class="icon-zoom-in"></i></span>
-				<span class="btn" ><i class="icon-star"></i></span>
-				<span class="btn" ><i class=" icon-thumbs-up"></i></span>
-				<span class="btn" ><i class="icon-thumbs-down"></i></span>
-			  </div>
-			</div>
-			</div>
-			<div class="span6">
-				<h3><?php echo $produk->brand;?> <?php echo $produk->model;?>  </h3>
-				<small>- <?php echo $produk->dimensi;?></small>
-				<hr class="soft"/>
-				<form action="<?php echo site_url('welcome/add_to_cartdetail/'.$produk->id);?>" class="form-horizontal qtyFrm">
-				  <div class="control-group">
-					<label class="control-label"><span>Rp. <?php echo number_format($produk->harga,0,',','.');?></span></label>
-					<div class="controls">
-					  <button type="submit" class="btn btn-large btn-primary pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
-					</div>
-				  </div>
-				</form>
-				<br class="clr"/>
-			<a href="#" name="detail"></a>
-			<hr class="soft"/>
-			</div>
-			
-			<div class="span9">
-            
-            
-              <div class="tab-pane fade active in" id="home">
-			  <h4>Product Information</h4>
-                <table class="table table-bordered">
-				<tbody>
-				<tr class="techSpecRow"><th colspan="2">Product Details</th></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Brand: </td><td class="techSpecTD2"><?php echo $produk->brand;?></td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Model:</td><td class="techSpecTD2"><?php echo $produk->model;?></td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Released on:</td><td class="techSpecTD2"> 2011-01-28</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">Dimensions:</td><td class="techSpecTD2"> <?php echo $produk->dimensi;?></td></tr>
-				</tbody>
-				</table>
-				
-				<?php echo $produk->keterangan;?>
-
           </div>
-
-	</div>
-</div>
-</div> </div>
-</div>
-	
-<!-- Footer ================================================================== -->
-	<div  id="footerSection">
-	<div class="container">
-		<div class="row">
-			<div class="span3">
-				<h5>ACCOUNT</h5>
-				<a href="login.html">YOUR ACCOUNT</a>
-				<a href="login.html">PERSONAL INFORMATION</a> 
-				<a href="login.html">ADDRESSES</a> 
-				<a href="login.html">DISCOUNT</a>  
-				<a href="login.html">ORDER HISTORY</a>
-			 </div>
-			<div class="span3">
-				<h5>INFORMATION</h5>
-				<a href="contact.html">CONTACT</a>  
-				<a href="register.html">REGISTRATION</a>  
-				<a href="legal_notice.html">LEGAL NOTICE</a>  
-				<a href="tac.html">TERMS AND CONDITIONS</a> 
-				<a href="faq.html">FAQ</a>
-			 </div>
-			<div class="span3">
-				<h5>OUR OFFERS</h5>
-				<a href="#">NEW PRODUCTS</a> 
-				<a href="#">TOP SELLERS</a>  
-				<a href="special_offer.html">SPECIAL OFFERS</a>  
-				<a href="#">MANUFACTURERS</a> 
-				<a href="#">SUPPLIERS</a> 
-			 </div>
-			<div id="socialMedia" class="span3 pull-right">
-				<h5>SOCIAL MEDIA </h5>
-				<a href="#"><img width="60" height="60" src="<?php echo base_url('assets/bootshop/themes/images/facebook.png');?>" title="facebook" alt="facebook"/></a>
-				<a href="#"><img width="60" height="60" src="<?php echo base_url('assets/bootshop/themes/images/twitter.png');?>" title="twitter" alt="twitter"/></a>
-				<a href="#"><img width="60" height="60" src="<?php echo base_url('assets/bootshop/themes/images/youtube.png');?>" title="youtube" alt="youtube"/></a>
-			 </div> 
-		 </div>
-		<p class="pull-right">&copy; Bootshop</p>
-	</div><!-- Container End -->
-	</div>
-<!-- Placed at the end of the document so the pages load faster ============================================= -->
-	<script src="<?php echo base_url('assets/bootshop/themes/js/jquery.js');?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/bootshop/themes/js/bootstrap.min.js');?>" type="text/javascript"></script>
-	<script src="<?php echo base_url('assets/bootshop/themes/js/google-code-prettify/prettify.js');?>"></script>
-	
-	<script src="<?php echo base_url('assets/bootshop/themes/js/bootshop.js');?>"></script>
-    <script src="<?php echo base_url('assets/bootshop/themes/js/jquery.lightbox-0.5.js');?>"></script>
-	
-	<!-- Themes switcher section ============================================================================================= -->
+        </ul>
+      </div>
+      <div class="col-xl-8 col-sm-12">
+				<div class="row">
+					<div class="col">
+						<ul class="breadcrumb">
+							<li><a href="<?= site_url()?>">Home</a> <span class="divider">/</span></li>
+							<li><a href="<?= site_url()?>">Products</a> <span class="divider">/</span></li>
+							<li class="active">product Details</li>
+						</ul>	
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xl-4 col-sm-12">
+						<img src="<?php echo base_url('uploads/'.$produk->gambar);?>" style="width:100%" alt="<?php echo $produk->brand;?> <?php echo $produk->model;?>"/>
+					</div>
+					<div class="col-xl-8 col-sm-12">
+						<h3><?php echo $produk->brand;?> <?php echo $produk->model;?>  </h3>
+						<form action="<?php echo site_url('welcome/add_to_cartdetail/'.$produk->id);?>" class="form-horizontal qtyFrm">
+							<div class="control-group">
+							<h5><span>Rp. <?php echo number_format($produk->harga,0,',','.');?></span></h5>
+							<div class="controls">
+								<button type="submit" class="btn btn-large btn-success pull-right"> Add to cart <i class=" icon-shopping-cart"></i></button>
+							</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<hr>
+				<div class="row">
+					<table class="table table-bordered">
+						<tbody>
+						<tr class="techSpecRow"><th colspan="2">Product Details</th></tr>
+						<tr class="techSpecRow"><td class="techSpecTD1">Brand: </td><td class="techSpecTD2"><?php echo $produk->brand;?></td></tr>
+						<tr class="techSpecRow"><td class="techSpecTD1">Model:</td><td class="techSpecTD2"><?php echo $produk->model;?></td></tr>
+						<tr class="techSpecRow"><td class="techSpecTD1">Released on:</td><td class="techSpecTD2"> 2011-01-28</td></tr>
+						<tr class="techSpecRow"><td class="techSpecTD1">Dimensions:</td><td class="techSpecTD2"> <?php echo $produk->dimensi;?></td></tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					<a class="btn btn-outline-dark" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+						show more
+					</a>
+				</p>
+				<div class="collapse" id="collapseExample">
+					<div class="card card-body">
+						<?php echo $produk->keterangan;?>
+					</div>
+				</div>
+			</div>
+			</div>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+	<script src="<?php echo base_url('assets/vendor/jquery-3.5.1.min.js');?>"></script>
+	<script src="<?php echo base_url('assets/vendor/bootstrap-4.5.3-dist/js/bootstrap.js');?>"></script>
 </body>
 </html>

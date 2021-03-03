@@ -79,12 +79,14 @@
                                                 <label class="col-sm-3 control-label">Kategori</label>
                                                 <div class="col-sm-9">
                                                   <select name="kategori" class="select2" data-placeholder="Choose a Country...">
-													  <option value="#">&nbsp;</option>
-													  <option value="Camera">Camera</option>
-													  <option value="Handphone">Handphone</option>
-													  <option value="Notebook">Notebook</option>
-													  <option value="Netbook">Netbook</option>
-													  <option value="PC">Computer Desktop</option>
+                                                    <?php
+                                                        $this->load->model('produk_model');
+                                                        $datakat = $this->produk_model->daftar_kategori();
+                                                    ?>
+													  <option value="#">--Pilih kategori--</option>
+													  <?php foreach ($datakat as $datakat): ?>
+                                                            <option><?=$datakat->nama_kategori?></option>
+                                                        <?php endforeach;?>
 												  </select>
                                                 </div>
                                             </div>

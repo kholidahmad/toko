@@ -5,17 +5,10 @@
   </head>
 <body>
 <div id="header">
-	<!-- Navbar ================================================== -->
 	<?php $this->load->view('navbar');?>
 <div class="container">
-<div id="welcomeLine" class="row">
-	<div class="span6">
-		<div class="pull-right">
-			
-			<a href="<?php echo site_url('welcome/cart');?>"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ <?php echo $this->cart->total_items();?> ] Itemes in your cart </span> </a> 
-		</div>
-	</div>
-</div>
+
+<!-- Navbar ================================================== -->
 </div>
 </div>
 <!-- Header End====================================================================== -->
@@ -28,33 +21,32 @@
 <!-- Sidebar end=============================================== -->
 		<div class="span9">		
 			
-		<h4>Latest Products </h4>
 			  <ul class="thumbnails">
 			  <?php foreach($produk as $produk): ?>
-				<li class="span3">
-				  <div class="thumbnail">
-				  <p style="min-height:160px;">
-					<a  href="<?php echo site_url('welcome/detailproduk/'.$produk->id);?>">
-						<?php 
-							$product_image = ['src'=>'uploads/' . $produk->gambar,
-								'width'=>'160',
-								'height'=>'160'];
-							echo img($product_image);
-						?>
-					</a>
-					</p>
-					<div class="caption">
-					  <h5><?php echo $produk->brand;?> <?php echo $produk->model;?></h5>
-					 
-					 
-					  <h4 style="text-align:center">
-							<a class="btn" href="<?php echo site_url('welcome/detailproduk/'.$produk->id);?>"> <i class="icon-zoom-in"></i></a> 
-							<a class="btn" href="<?php echo site_url('welcome/add_to_cart/'.$produk->id);?>">Add to <i class="icon-shopping-cart"></i></a> 
-							<a class="btn btn-primary" href="#">Rp. <?php echo number_format($produk->harga,0,',','.');?></a>
-						</h4>
-					</div>
-				  </div>
-				</li>
+					<li class="span3">
+						<div class="thumbnail">
+							<p style="min-height:160px;">
+							<a  href="<?php echo site_url('welcome/detailproduk/'.$produk->id);?>">
+								<?php 
+									$product_image = ['src'=>'uploads/' . $produk->gambar,
+										'width'=>'160',
+										'height'=>'160'];
+									echo img($product_image);
+								?>
+							</a>
+							</p>
+							<div class="caption">
+								<h5><?php echo $produk->brand;?> <?php echo $produk->model;?></h5>
+							
+							
+								<h4 style="text-align:center">
+									<a class="btn" href="<?php echo site_url('welcome/detailproduk/'.$produk->id);?>"> <i class="icon-zoom-in"></i></a> 
+									<a class="btn" href="<?php echo site_url('welcome/add_to_cart/'.$produk->id);?>">Add to <i class="icon-shopping-cart"></i></a> 
+									<a class="btn btn-primary" href="#">Rp. <?php echo number_format($produk->harga,0,',','.');?></a>
+								</h4>
+							</div>
+						</div>
+					</li>
 				<?php endforeach;?>
 			  </ul>	
 		</div>
@@ -96,7 +88,7 @@
 				<a href="#"><img width="60" height="60" src="<?php echo base_url('assets/bootshop/themes/images/youtube.png');?>" title="youtube" alt="youtube"/></a>
 			 </div> 
 		 </div>
-		<p class="pull-right">&copy; Bootshop</p>
+		<p class="pull-right">&copy; SyopAja By @kholid.ahmad</p>
 	</div><!-- Container End -->
 	</div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
