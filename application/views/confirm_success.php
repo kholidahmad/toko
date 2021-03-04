@@ -31,10 +31,7 @@
       </div>
       <div class="col-xl-8 col-sm-12">
 				<div class="row">
-				<div class="alert alert-success" role="alert">
-					<h4 class="alert-heading"><i class="fas fa-check text-success mr-2"></i> Konfirmasi Berhasil</h4>
-					<p>Barang akan segera dikirimkan.</p>
-				</div>
+         <span><?= $this->session->flashdata('message');?></span><br>
 				</div>
       </div>
     </div>

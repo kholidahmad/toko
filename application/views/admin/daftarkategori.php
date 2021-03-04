@@ -96,7 +96,7 @@
 																						<tr>
 																							<td><?php echo $kategori->nama_kategori;?></td>
 																							<td>
-																							<a href="<?php echo site_url('admin/editkategori/'.$kategori->id_kategori);?>">Edit</a> | <a href="<?php echo site_url('admin/hapuskategori/'.$kategori->id_kategori);?>">Hapus</a>
+																							<a href="<?php echo site_url('admin/editkategori/'.$kategori->id_kategori);?>"><i class="md-border-color"></i> Edit</a> | <a href="<?php echo site_url('admin/hapuskategori/'.$kategori->id_kategori);?>"> <i class="md-delete"></i>Hapus</a>
 																							</td>
 																						</tr>
 																						<?php endforeach;?>

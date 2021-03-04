@@ -31,6 +31,12 @@
       </div>
       <div class="col-xl-8 col-sm-12">
       <div class="row">
+        
+        <?php if($produk == null): ?>
+          <div class="alert alert-warning" role="alert">
+            Sayang sekali... Produk sedang Kosong.
+          </div>
+        <?php else: ?>
         <?php foreach($produk as $produk): ?>
         <div class="col-sm-6">
           <div class="card pt-3 pb-2 mb-3" style="text-align:center">
@@ -44,7 +50,7 @@
 							</a>
 							</p>
 							<div class="caption mt-3">
-								<h4><?php echo $produk->brand;?> <?php echo $produk->model;?></h4>
+								<h4> <?php echo $produk->model;?></h4><br>
                 <h5>Rp. <?php echo number_format($produk->harga,0,',','.');?></h5>
 							
 								<div class="mt-3 mb-3">
@@ -55,6 +61,9 @@
           </div>
         </div>
         <?php endforeach;?>
+        <?php endif; ?>
+
+
       </div>
         
       </div>

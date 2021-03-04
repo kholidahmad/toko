@@ -74,7 +74,7 @@
                             <div class="col-md-12">
                                 <div class="panel panel-default">
                                     <div class="panel-heading">
-                                        <h3 class="panel-title">Datatable</h3>
+                                        <h3 class="panel-title">Daftar Produk</h3>
                                     </div>
                                     <div class="panel-body">
                                         <div class="row">
@@ -109,7 +109,7 @@
 																echo img($product_image);
 																?>
 															</td>
-                                                            <td><a href="<?php echo site_url('admin/editproduk/'.$produk->id);?>">Edit</a> | <a href="<?php echo site_url('admin/hapusproduk/'.$produk->id);?>">Hapus</a></td>
+                                                            <td><a href="<?php echo site_url('admin/editproduk/'.$produk->id);?>"><i class="md-border-color"></i> Edit</a> | <a href="<?php echo site_url('admin/hapusproduk/'.$produk->id);?>"><i class="md-delete"></i> Hapus</a></td>
                                                         </tr>
 													<?php endforeach;?>
                                                     </tbody>

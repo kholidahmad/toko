@@ -13,13 +13,19 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$data['produk'] = $this->produk_model->daftar_produk();
-		// $this->load->view('welcome_message',$data);
 		$this->load->view('home',$data);
 	}
 	
 	function kategori($kategori)
 	{
 		$data['produk'] = $this->produk_model->select_kategori($kategori);
+		$this->load->view('home',$data);
+	}
+	
+	function newkategori()
+	{
+		$data['produk'] = $this->produk_model->select_kategori_terbaru();
+		// var_dump($data['produk']);die;
 		$this->load->view('home',$data);
 	}
 	
@@ -104,16 +110,24 @@ class Welcome extends CI_Controller {
 		if (!$this->upload->do_upload())
 		{
 			$this->load->view('konfirmasi');
-		}
-		else
-		{
+		}else{
 			$gambar = $this->upload->data();
-			
-			$data['invoice_id'] = $this->input->post('invoice_id',true);
+			$id_invoice = $this->input->post('invoice_id',true);
+			$cekid_invoice = $this->produk_model->cekid_invoice($id_invoice);
+			// var_dump($cekid_invoice);die;
+			$data['invoice_id'] = $id_invoice;
+			$data['status'] = 0;
 			$data['gambar'] = $gambar['file_name'];
-		
-			$this->produk_model->insert_konfirmasi($data);
-			$this->load->view('confirm_success');
+			
+			if($cekid_invoice == NULL){
+				$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Sayang sekali, Nomor Invoice tidak ditemukan !</div>');
+				$this->load->view('confirm_success');
+			}else{
+				$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert"><h4 class="alert-heading"><i class="fas fa-check text-success mr-2"></i>Yey! Konfirmasi Berhasil</h4>
+				<p>Barang akan segera dikirimkan.</p></div>');
+				$this->produk_model->insert_konfirmasi($data);
+				$this->load->view('confirm_success');
+			}
 		}
 	}
 	
@@ -121,7 +135,7 @@ class Welcome extends CI_Controller {
 	{
 		$kategori = $this->input->post('kategori',true);
 		$str = $this->input->post('str',true);
-		
+		// var_dump($str, $kategori);die;
 		$data['produk'] = $this->produk_model->cariproduk($kategori,$str);
 		$this->load->view('home',$data);
 	}

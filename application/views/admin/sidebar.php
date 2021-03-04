@@ -6,7 +6,7 @@
                         </div>
                         <div class="user-info">
                             <div class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">John Doe <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Kholid <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li><a href="javascript:void(0)"><i class="md md-face-unlock"></i> Profile<div class="ripple-wrapper"></div></a></li>
                                     <li><a href="javascript:void(0)"><i class="md md-settings"></i> Settings</a></li>
@@ -25,16 +25,16 @@
                                 <a href="<?php echo site_url('admin');?>" class="waves-effect"><i class="md md-home"></i><span> Dashboard </span></a>
                             </li>
 							<li>
-                                <a href="<?php echo site_url('admin/daftarproduk');?>" class="waves-effect"><i class="md md-home"></i><span> Produk </span></a>
+                                <a href="<?php echo site_url('admin/daftarproduk');?>" class="waves-effect"><i class="md-label"></i><span> Produk </span></a>
                             </li>
 							<li>
-                                <a href="<?php echo site_url('admin/daftarkategori');?>" class="waves-effect"><i class="md md-home"></i><span> Kategori </span></a>
+                                <a href="<?php echo site_url('admin/daftarkategori');?>" class="waves-effect"><i class="md-view-list"></i><span> Kategori </span></a>
                             </li>
 							<li>
-                                <a href="<?php echo site_url('admin/invoices');?>" class="waves-effect"><i class="md md-home"></i><span> Invoices </span></a>
+                                <a href="<?php echo site_url('admin/invoices');?>" class="waves-effect"><i class="md-payment"></i><span> Invoices </span></a>
                             </li>
 							<li>
-                                <a href="<?php echo site_url('admin/konfirmasi');?>" class="waves-effect"><i class="md md-home"></i><span> Konfirmasi </span></a>
+                                <a href="<?php echo site_url('admin/konfirmasi');?>" class="waves-effect"><i class="md-assignment-turned-in"></i><span> Konfirmasi </span></a>
                             </li>
 							
 

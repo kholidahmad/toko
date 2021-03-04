@@ -101,9 +101,10 @@
                                                                 <a href="<?php echo site_url('admin/download/'.$konfirmasi->gambar);?>">Download Lampiran</a></td>
                                                             <td>
                                                                 <?php if($konfirmasi->status == 0):?>
-                                                                <a href="<?php echo site_url('admin/detailkonfirmasi/'.$konfirmasi->invoice_id);?>">DETAIL</a> | <a href="<?php echo site_url('admin/aproval/'.$konfirmasi->id);?>">APPROVE</a>
+                                                                <a href="<?php echo site_url('admin/detailkonfirmasi/'.$konfirmasi->invoice_id);?>"><i class="md-search"></i> DETAIL</a> | <a href="<?php echo site_url('admin/aproval/'.$konfirmasi->id);?>">
+                                                                <i class="md-done"></i> APPROVE</a>
                                                                 <?php else:?>
-                                                                    <a href="<?php echo site_url('admin/detailkonfirmasi/'.$konfirmasi->invoice_id);?>">DETAIL</a>
+                                                                    <a href="<?php echo site_url('admin/detailkonfirmasi/'.$konfirmasi->invoice_id);?>"><i class="md-search"></i> DETAIL</a>
                                                                 <?php endif;?>
                                                             </td>
                                                         </tr>

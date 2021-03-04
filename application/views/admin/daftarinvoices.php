@@ -103,7 +103,7 @@
                                                             <td><?php echo $invoices->date;?></td>
                                                             <td><?php echo $invoices->due_date;?></td>
                                                             <td><?php echo $invoices->id;?></td>
-                                                            <td><?php echo $invoices->status;?></td>
+                                                            <td><h4><?php echo $invoices->status;?></h4></td>
                                                             <td>
 																<a href="<?php echo site_url('admin/detailinvoices/'.$invoices->id);?>">Detail</a>
 															</td>

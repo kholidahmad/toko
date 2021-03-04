@@ -8,7 +8,7 @@
 
         <link rel="shortcut icon" href="images/favicon_1.ico">
 
-        <title>Moltran - Responsive Admin Dashboard Template</title>
+        <title>SyopAja</title>
 
         <!-- Base Css Files -->
         <link href="<?php echo base_url('assets/blue/css/bootstrap.min.css');?>" rel="stylesheet" />

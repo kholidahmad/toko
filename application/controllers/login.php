@@ -20,19 +20,17 @@ class Login extends CI_Controller
 		$password = $this->input->post('password',true);
 		
 		$akun = $this->produk_model->cek_user($username,$password);
-		$cek_akun = count($akun);
+		// var_dump($akun);die;
 		
-		if ($cek_akun > 0)
-		{
+		if ($akun != NULL){
 			$data = array(
 				'logged_in'=>true
 			);
 			
 			$this->session->set_userdata($data);
 			redirect('admin');
-		}
-		else
-		{
+		}else{
+			$this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Terjadi  Kesalahan !</div>');
 			$this->load->view('login');
 		}
 	}

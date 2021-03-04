@@ -38,13 +38,13 @@
 						<div class="form-group">
 						<label class="control-label" for="inputEmail0">Nama</label>
 						<div class="controls">
-							<input name="nama" class="form-control"  type="name" id="inputEmail0" placeholder="Nama">
+							<input required name="nama" class="form-control"  type="name" id="inputEmail0" placeholder="Nama">
 						</div>
 						</div>
 						<div class="form-group">
 						<label class="control-label" for="inputEmail0">No. Handphone</label>
 						<div class="controls">
-							<input name="nope" class="form-control"  type="number" id="inputEmail0" placeholder="No HP">
+							<input required name="nope" class="form-control"  type="number" id="inputEmail0" placeholder="No HP">
 						</div>
 						</div>
 						<div class="form-group">

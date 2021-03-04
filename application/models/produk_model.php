@@ -35,6 +35,12 @@ class Produk_model extends CI_Model
 		return $this->db->get('konfirmasi')->row();
 	}
 
+	function cekid_invoice($id)
+	{
+		$this->db->where('id',$id);
+		return $this->db->get('invoices')->row();
+	}
+
 	function update_aproval_invoice($id){
 		$this->db->where('id',$id);
 		$this->db->update('invoices',['status'=>'lunas']);
@@ -83,6 +89,12 @@ class Produk_model extends CI_Model
 	{
 		$this->db->where('kategori',$kategori);
 		return $this->db->get('produk')->result();
+	}
+	
+	function select_kategori_terbaru()
+	{
+		$sql = "SELECT * FROM produk ORDER BY id DESC LIMIT 2";
+		return $this->db->query($sql)->result();
 	}
 	
 	function insert_order($data)

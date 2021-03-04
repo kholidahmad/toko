@@ -65,7 +65,9 @@ class Admin extends CI_Controller
 			$data['dimensi'] = $this->input->post('dimensi',true);
 			$data['keterangan'] = $this->input->post('keterangan',true);
 			$data['harga'] = $this->input->post('harga',true);
+			$data['tgl'] = date('Y-m-d');
 			$data['gambar'] = $gambar['file_name'];
+			
 		
 			$this->produk_model->tambah_produk($data);
 			redirect('admin/daftarproduk');

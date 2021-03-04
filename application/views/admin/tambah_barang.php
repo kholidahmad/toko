@@ -75,68 +75,68 @@
                                     <div class="panel-heading"><h3 class="panel-title">Horizontal form</h3></div>
                                     <div class="panel-body">
 										<?php echo form_open_multipart('admin/proses_tambah_produk',['class'=>'form-horizontal','role'=>'form']);?>
-                                            <div class="form-group">
-                                                <label class="col-sm-3 control-label">Kategori</label>
-                                                <div class="col-sm-9">
-                                                  <select name="kategori" class="select2" data-placeholder="Choose a Country...">
-                                                    <?php
-                                                        $this->load->model('produk_model');
-                                                        $datakat = $this->produk_model->daftar_kategori();
-                                                    ?>
-													  <option value="#">--Pilih kategori--</option>
-													  <?php foreach ($datakat as $datakat): ?>
-                                                            <option><?=$datakat->nama_kategori?></option>
-                                                        <?php endforeach;?>
-												  </select>
-                                                </div>
-                                            </div>
-											<div class="form-group">
-                                                <label class="col-sm-3 control-label">Brand</label>
-                                                <div class="col-sm-9">
-                                                  <input type="text" name="brand" class="form-control" placeholder="Brand">
-                                                </div>
-                                            </div>
-											<div class="form-group">
-                                                <label class="col-sm-3 control-label">Model</label>
-                                                <div class="col-sm-9">
-                                                  <input type="text" name="model" class="form-control" placeholder="Model">
-                                                </div>
-                                            </div>
-											<div class="form-group">
-                                                <label class="col-sm-3 control-label">Dimensi</label>
-                                                <div class="col-sm-9">
-                                                  <input type="text" name="dimensi" class="form-control" placeholder="Dimensi">
-                                                </div>
-                                            </div>
-											<div class="form-group">
-                                                <label class="col-sm-3 control-label">Harga</label>
-                                                <div class="col-sm-9">
-                                                  <input type="text" name="harga" class="form-control" placeholder="Harga, Mis : 750000">
-                                                </div>
-                                            </div>
-											<div class="form-group">
-                                                <label class="col-sm-3 control-label">Gambar</label>
-                                                <div class="col-sm-9">
-                                                  <input type="file" class="form-control" name="userfile">
-                                                </div>
-                                            </div>
+												<div class="form-group">
+														<label class="col-sm-3 control-label">Kategori</label>
+														<div class="col-sm-9">
+															<select name="kategori" class="select2" data-placeholder="Choose a Country...">
+																<?php
+																		$this->load->model('produk_model');
+																		$datakat = $this->produk_model->daftar_kategori();
+																?>
+																				<option value="#">--Pilih kategori--</option>
+																				<?php foreach ($datakat as $datakat): ?>
+																				<option><?=$datakat->nama_kategori?></option>
+																		<?php endforeach;?>
+																	</select>
+														</div>
+												</div>
+														<div class="form-group">
+														<label class="col-sm-3 control-label">Brand</label>
+														<div class="col-sm-9">
+															<input type="text" name="brand" class="form-control" placeholder="Brand">
+														</div>
+												</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Model</label>
+														<div class="col-sm-9">
+															<input type="text" name="model" class="form-control" placeholder="Model">
+														</div>
+												</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Dimensi</label>
+														<div class="col-sm-9">
+															<input type="text" name="dimensi" class="form-control" placeholder="Dimensi">
+														</div>
+												</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Harga</label>
+														<div class="col-sm-9">
+															<input type="text" name="harga" class="form-control" placeholder="Harga, Mis : 750000">
+														</div>
+												</div>
+													<div class="form-group">
+														<label class="col-sm-3 control-label">Gambar</label>
+														<div class="col-sm-9">
+															<input type="file" class="form-control" name="userfile">
+														</div>
+												</div>
 											<div class="col-sm-12">
-                                <div class="panel panel-default">
-                                    <div class="panel-heading"><h3 class="panel-title">Masukkan keterangan produk</h3></div>
-                                    <div class="panel-body">
-                                        <textarea name="keterangan" class="wysihtml5 form-control" rows="9"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                                            <div class="form-group m-b-0">
-                                                <div class="col-sm-offset-3 col-sm-9">
-                                                  <button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
-                                                </div>
-                                            </div>
-                                        <?php echo form_close();?>
-                                    </div> <!-- panel-body -->
-                                </div> <!-- panel -->
-                            </div> <!-- col -->
+															<div class="panel panel-default">
+																	<div class="panel-heading"><h3 class="panel-title">Masukkan keterangan produk</h3></div>
+																	<div class="panel-body">
+																			<textarea name="keterangan" class="wysihtml5 form-control" rows="9"></textarea>
+																	</div>
+															</div>
+													</div>
+												<div class="form-group m-b-0">
+														<div class="col-sm-offset-3 col-sm-9">
+															<button type="submit" class="btn btn-info waves-effect waves-light">Tambah</button>
+														</div>
+												</div>
+										<?php echo form_close();?>
+								</div> <!-- panel-body -->
+						</div> <!-- panel -->
+				</div> <!-- col -->
 						</div>
 					</div>
 				</div>

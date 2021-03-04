@@ -36,13 +36,13 @@
 						<div class="form-group">
 						<label class="control-label" for="inputEmail0">Masukkan Kode Pesanan</label>
 						<div class="controls">
-							<input name="invoice_id" class="span3"  type="name" id="inputEmail0" placeholder="">
+							<input required name="invoice_id" class="span3"  type="name" id="inputEmail0" placeholder="">
 						</div>
 						</div>
 						<div class="control-group">
 						<label class="control-label" for="inputEmail0">Upload Bukti Transfer</label>
 						<div class="controls">
-							<input type="file" class="form-control" name="userfile">
+							<input required type="file" class="form-control" name="userfile">
 						</div>
 						</div>
 						<div class="controls">
